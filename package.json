@@ -1,6 +1,6 @@
 {
   "name": "text-corpus",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Some classes to represent elements in a text corpus.",
   "main": "index.js",
   "directories": {
