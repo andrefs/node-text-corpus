@@ -1,5 +1,5 @@
 
-# cetem-publico
+# text-corpus
 
 Some classes to represent elements in a text corpus. Currently, this
 is mainly something to be used in [cetem-publico](https://www.npmjs.com/package/cetem-publico), [tnt-tagger]() and other modules, but hopefully it will be generic enough to be useful in other contexts as well.
@@ -13,28 +13,23 @@ $ npm install text-corpus
 ## Classes
 
 ### Token
-Used to represent the tokens in the original corpus file. In the
-format used by CETEMPublico, each token is in an individual line.
+Used to represent the tokens (words) in the corpus.
 
 #### `new Token(word, info)`
 
 * `word` is the word in the original corpus text
 * `info` (all these are optional)
-    * `lineNum`: the line number for this token in the original corpus
-      file
     * `tokenId`: an ID for this token
-    * `section`: the ID of the section the token is in
-    * `week`:
     * `lemma`: the lemmatized version of `word`
     * `pos`: the part-of-speech (POS) tag for `word`
-    * `other*: an object with all the extra information found in
-      CETEMPublico for this token
+    * `other*: more information about the token
 
 ### MultiWordExpression
 
-CETEMPublico annotates some mult-word expressions using `<mwe>` tags.
-Inside each tag, the tokens which compose the expression, one in each
-line. MWEs can have attributes indicating the lemma and the POS tag
+This class provides a way to group some tokens into multi-word
+expressions.
+
+MWEs can have attributes indicating the lemma and the POS tag
 for the whole expression.
 
 #### `new MultiWordExpression({lemma, pos}, tokens)`
@@ -45,7 +40,6 @@ for the whole expression.
 
 ### Sentence
 
-In CETEMPublico, a sentence is represented using a `<s>` tag.
 Sentences contain a list of tokens (the words in that sentence).
 Because some words can form multi-word expressions, inside a
 `Sentence` we can find both `Token`s and `MultiWordExpression`s
@@ -57,7 +51,6 @@ Because some words can form multi-word expressions, inside a
 * `tokens`: an array of tokens and MWEs which form this sentence
 
 ### Paragraph
-A paragraph, represented in CETEMPublico using the tag `<p>`.
 Paragraphs are composed of a sequence of sentences.
 
 #### `new Paragraph(id, sentences)`
