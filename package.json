@@ -1,0 +1,31 @@
+{
+  "name": "text-corpus",
+  "version": "0.0.1",
+  "description": "Some classes to represent elements in a text corpus.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrefs/node-text-corpus.git"
+  },
+  "keywords": [
+    "corpus",
+    "nlp",
+    "natural",
+    "language",
+    "processing",
+    "text",
+    "language"
+  ],
+  "author": "André Santos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrefs/node-text-corpus/issues"
+  },
+  "homepage": "https://github.com/andrefs/node-text-corpus#readme"
+}
